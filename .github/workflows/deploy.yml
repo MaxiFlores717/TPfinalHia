@@ -3,7 +3,7 @@ name: Despliegue Continuo
 on:
   push:
     branches:
-      - main  
+      - main  # Nombre de tu rama principal
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
       uses: actions/checkout@v2
       
     - name: Setear Java JDK 17
-      uses: actions/setup-java@v1
+      uses: actions/setup-java@v2
       with:
         java-version: '17'
 
@@ -22,6 +22,10 @@ jobs:
       run: |
         ./mvnw package -DskipTests=true
 
-    - name: Desplegar en el Servidor
+    - name: Construir la Imagen Docker
       run: |
-        java -jar ./target/TPFINAL-0.0.1-SNAPSHOT.jar
+        docker build -t tpfinal-docker .
+        
+    - name: Iniciar Contenedor Docker
+      run: |
+        docker run --name springboot-docker -p 8080:8080 tpfinal-docker
