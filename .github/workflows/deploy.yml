@@ -24,7 +24,6 @@ jobs:
         chmod +x mvnw
         
     - name: Construir la Imagen Docker
-      working-directory: ./target
       run: |
         docker build -t tpfinal-docker .
 
