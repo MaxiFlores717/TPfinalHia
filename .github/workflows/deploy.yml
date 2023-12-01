@@ -20,6 +20,7 @@ jobs:
 
     - name: Construir la Imagen Docker
       run: |
+        chmod +x mvnw
         docker build -t tpfinal-docker .
 
     - name: Detener y Eliminar el Contenedor Antiguo
