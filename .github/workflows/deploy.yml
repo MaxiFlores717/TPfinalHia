@@ -18,10 +18,6 @@ jobs:
       with:
         java-version: '17'
 
-    - name: Construir y Empaquetar la Aplicación
-      run: |
-        ./mvnw package -DskipTests=true
-
     - name: Construir la Imagen Docker
       run: |
         docker build -t tpfinal-docker .
