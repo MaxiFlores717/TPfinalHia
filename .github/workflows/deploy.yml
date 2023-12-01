@@ -21,9 +21,13 @@ jobs:
     - name: Construir la Imagen Docker
       run: |
         docker build -t tpfinal-docker .
-        
-    - name: Iniciar Contenedor Docker
+
+    - name: Detener y Eliminar el Contenedor Antiguo
       run: |
-        docker stop springboot-docker  
-        docker rm springboot-docker
+        docker stop springboot-docker || true
+        docker rm springboot-docker || true
+
+    - name: Iniciar Nuevo Contenedor Docker
+      run: |
         docker run --name springboot-docker -p 8080:8080 tpfinal-docker
+
