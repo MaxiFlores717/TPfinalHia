@@ -27,6 +27,14 @@ jobs:
       run: |
         docker build -t tpfinal-docker .
 
+    - name: Iniciar Sesión en Docker Hub
+      run: |
+        echo ${{ secrets.DOCKER_HUB_PASSWORD }} | docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} --password-stdin
+
+    - name: Subir Imagen a Docker Hub
+      run: |
+        docker tag tpfinal-docker ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
+        docker push ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
     - name: Detener y Eliminar el Contenedor Antiguo
       run: |
         docker stop springboot-docker || true
