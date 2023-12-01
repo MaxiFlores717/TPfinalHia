@@ -1,0 +1,27 @@
+name: Despliegue Continuo
+
+on:
+  push:
+    branches:
+      - main  # Cambiar por el nombre de tu rama principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout del Código
+      uses: actions/checkout@v2
+      
+    - name: Setear Java JDK 11
+      uses: actions/setup-java@v1
+      with:
+        java-version: '11'
+
+    - name: Construir y Empaquetar la Aplicación
+      run: |
+        ./mvnw package -DskipTests=true
+
+    - name: Desplegar en el Servidor
+      run: |
+        java -jar ./target/TPFINAL-0.0.1-SNAPSHOT.jar
