@@ -42,5 +42,5 @@ jobs:
 
     - name: Iniciar Nuevo Contenedor Docker
       run: |
-        docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
+        docker pull maxiflores087/tpfinal-docker
         docker run --name springboot-docker -p 8080:8080 ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
