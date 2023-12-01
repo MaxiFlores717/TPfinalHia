@@ -24,4 +24,6 @@ jobs:
         
     - name: Iniciar Contenedor Docker
       run: |
+        docker stop springboot-docker  
+        docker rm springboot-docker
         docker run --name springboot-docker -p 8080:8080 tpfinal-docker
