@@ -16,6 +16,7 @@ jobs:
     - name: Setear Java JDK 17
       uses: actions/setup-java@v2
       with:
+        distribution: 'adopt'
         java-version: '17'
 
     - name: Construir la Imagen Docker
