@@ -3,7 +3,7 @@ name: Despliegue Continuo
 on:
   push:
     branches:
-      - main  # Cambiar por el nombre de tu rama principal
+      - main  
 
 jobs:
   build:
@@ -13,10 +13,10 @@ jobs:
     - name: Checkout del Código
       uses: actions/checkout@v2
       
-    - name: Setear Java JDK 11
+    - name: Setear Java JDK 17
       uses: actions/setup-java@v1
       with:
-        java-version: '11'
+        java-version: '17'
 
     - name: Construir y Empaquetar la Aplicación
       run: |
