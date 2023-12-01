@@ -19,10 +19,13 @@ jobs:
         distribution: 'adopt'
         java-version: '17'
 
-    - name: Construir la Imagen Docker
+    - name: Dar permisos al archivo mvnw
       run: |
         chmod +x mvnw
-        working-directory: ./target
+        
+    - name: Construir la Imagen Docker
+      working-directory: ./target
+      run: |
         docker build -t tpfinal-docker .
 
     - name: Detener y Eliminar el Contenedor Antiguo
