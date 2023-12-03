@@ -31,7 +31,6 @@ public class Usuario implements Serializable{
 	private String apellido;
 	
 	@NotNull
-	@Column(name = "fecha_nacimiento")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fecha;
 	
@@ -41,7 +40,6 @@ public class Usuario implements Serializable{
 	@NotEmpty
 	private String nacionalidad;
 	
-	@Column(name = "tipo_usuario")
 	@NotEmpty
 	private String tipoUsuario;
 
