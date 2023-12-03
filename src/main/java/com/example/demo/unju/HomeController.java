@@ -10,8 +10,4 @@ public class HomeController {
     public String bienvenida() {
         return "bienvenida"; // Esto devolverá el nombre de la plantilla HTML (index.html)
     }
-    @GetMapping("/listar")
-    public String listar() {
-        return "listar"; // Esto devolverá el nombre de la plantilla HTML (index.html)
-    }
 }
