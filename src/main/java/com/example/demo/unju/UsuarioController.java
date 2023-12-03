@@ -34,10 +34,7 @@ public class UsuarioController {
 	
 	
 	@GetMapping("/listar")
-	public String listar(Model model ,  @Param("dni") Long dni,
-			@Param("fecha") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate fecha, 
-			@Param("nacionalidad") String nacionalidad,
-			@Param("tipo") String tipo) throws Exception {		
+	public String listar(Model model) throws Exception {		
 		
 		model.addAttribute("titulo", "Listado de usuarios");
 
