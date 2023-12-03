@@ -22,7 +22,7 @@ public class Usuario implements Serializable{
 	private static final long serialVersionUID = 1L;
 	@Id
 	@NotNull
-	private Long dni;
+	private String dni;
 	
 	@NotEmpty
 	private String nombre;
@@ -47,11 +47,11 @@ public class Usuario implements Serializable{
 
 	
 
-	public Long getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(Long dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
@@ -112,7 +112,7 @@ public class Usuario implements Serializable{
 
 	
 
-	public Usuario(@NotNull Long dni, @NotEmpty String nombre, @NotEmpty String apellido, @NotNull LocalDate fecha,
+	public Usuario(@NotNull String dni, @NotEmpty String nombre, @NotEmpty String apellido, @NotNull LocalDate fecha,
 			@NotEmpty String password, @NotEmpty String nacionalidad, @NotEmpty String tipoUsuario) {
 		super();
 		this.dni = dni;
