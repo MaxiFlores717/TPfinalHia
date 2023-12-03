@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head th:replace="layout/layout :: head">
+<head th:replace="~{layout/layout :: head}">
 <title>Inicio</title>
 </head>
 <body>
-	<header th:replace="layout/layout :: header"></header>
+	<header th:replace="~{layout/layout :: header}"></header>
 	<div class="container py-4">
 
 		<div class="card border-primary text-center">
@@ -16,7 +16,7 @@
 			</div>
 		</div>
 	</div>
-	<footer th:replace="layout/layout :: footer"></footer>
+	<footer th:replace="~{layout/layout :: footer}"></footer>
 </body>
 
 </html>
