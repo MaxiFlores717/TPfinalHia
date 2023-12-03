@@ -3,7 +3,7 @@ name: Despliegue Continuo
 on:
   push:
     branches:
-      - main  # Nombre de tu rama principal
+      - main  
 
 jobs:
   build:
