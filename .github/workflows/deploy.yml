@@ -37,12 +37,3 @@ jobs:
       run: |
         docker tag tpfinal-docker ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
-    - name: Detener y Eliminar el Contenedor Antiguo
-      run: |
-        docker stop springboot-docker || true
-        docker rm springboot-docker || true
-
-    - name: Iniciar Nuevo Contenedor Docker
-      run: |
-        docker pull maxiflores087/tpfinal-docker
-        docker run --name springboot-docker -p 8080:8080 ${{ secrets.DOCKER_HUB_USERNAME }}/tpfinal-docker
