@@ -3,9 +3,12 @@ package com.example.demo.models;
 import java.io.Serializable;
 import java.time.LocalDate;
 
+import javax.persistence.Column;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.format.annotation.DateTimeFormat;
+
 
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -28,6 +31,7 @@ public class Usuario implements Serializable{
 	private String apellido;
 	
 	@NotNull
+	@Column(name = "fecha_nacimiento")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate fecha;
 	
@@ -37,6 +41,7 @@ public class Usuario implements Serializable{
 	@NotEmpty
 	private String nacionalidad;
 	
+	@Column(name = "tipo_usuario")
 	@NotEmpty
 	private String tipoUsuario;
 
