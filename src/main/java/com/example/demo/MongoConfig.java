@@ -22,7 +22,7 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
 	 @Override
 	    @Bean
 	    public MongoClient mongoClient() {
-	        ConnectionString connectionString = new ConnectionString("mongodb://mongo1:27017,mongo2:27018/test?replicaSet=myReplicaSet");
+	        ConnectionString connectionString = new ConnectionString("mongodb://mongo1:27017,mongo2:27018,mongo3:27019/test?replicaSet=myReplicaSet");
 	        MongoClientSettings mongoClientSettings = MongoClientSettings.builder()
 	            .applyConnectionString(connectionString)
 	            .build();
